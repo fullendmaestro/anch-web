@@ -1,6 +1,9 @@
 import { useClickRef } from "@make-software/csprclick-ui";
-import { Button } from "./components/ui/button";
+import { Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
+import Home from "./pages/home";
+import Swap from "./pages/swap";
+import Faucet from "./pages/faucet";
 
 const App = () => {
   const clickRef = useClickRef();
@@ -10,16 +13,11 @@ const App = () => {
   }, [clickRef?.on]);
 
   return (
-    <div>
-      <Button>Hello world</Button>
-      <Button
-        onClick={() => {
-          clickRef.connect("casper-wallet");
-        }}
-      >
-        Connect
-      </Button>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/faucet" element={<Faucet />} />
+      <Route path="/swap" element={<Swap />} />
+    </Routes>
   );
 };
 
