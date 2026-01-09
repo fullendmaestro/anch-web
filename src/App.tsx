@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Home from "./pages/home";
 import Swap from "./pages/swap";
 import Faucet from "./pages/faucet";
+import Earn from "./pages/Earn";
 
 const App = () => {
   const clickRef = useClickRef();
@@ -17,6 +18,7 @@ const App = () => {
       <Route path="/" element={<Home />} />
       <Route path="/faucet" element={<Faucet />} />
       <Route path="/swap" element={<Swap />} />
+      <Route path="/earn" element={<Earn />} />
     </Routes>
   );
 };
